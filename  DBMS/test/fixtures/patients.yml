@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  p_ssn: 1.5
+  p_fname: MyString
+  p_minit: MyString
+  p_lname: MyString
+  p_birthdate: 2017-02-11
+  p_phonenume: MyString
+  p_address_string: MyString
+  p_complain: MyText
+  p_age: 2017-02-11
+
+two:
+  p_ssn: 1.5
+  p_fname: MyString
+  p_minit: MyString
+  p_lname: MyString
+  p_birthdate: 2017-02-11
+  p_phonenume: MyString
+  p_address_string: MyString
+  p_complain: MyText
+  p_age: 2017-02-11

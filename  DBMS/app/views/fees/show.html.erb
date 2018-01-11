@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Patient name:</strong>
+  <% y= @fee.patient %>
+  <%= y.p_fname %>
+  <%= y.p_lname %>
+</p>
+
+<p>
+  <strong>Examination fees:</strong>
+  <%= @fee.examination_fees %>
+</p>
+
+<p>
+  <strong>Medication fees:</strong>
+  <%= @fee.medication_fees %>
+</p>
+
+<p>
+  <strong>Extra fees:</strong>
+  <%= @fee.extra_fees %>
+</p>
+
+<p>
+  <strong>Discount:</strong>
+  <%= @fee.discount %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @fee.examination_fees + @fee.medication_fees + @fee.extra_fees - @fee.discount %>
+</p>
+
+<!--%= link_to 'Edit', edit_fee_path(@fee) % --> 
+<!--%= link_to 'Pay by credit card', pay_path(@fee)  %--></p>
+<%= link_to("Pay by credit card",{:controller => 'fees',:action => 'pay',:fee =>@fee})%>

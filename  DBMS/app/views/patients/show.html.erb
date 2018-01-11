@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Social security number:</strong>
+  <%= @patient.p_ssn %>
+</p>
+
+<p>
+  <strong>first name:</strong>
+  <%= @patient.p_fname %>
+</p>
+
+<p>
+  <strong>Mid initial:</strong>
+  <%= @patient.p_minit %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @patient.p_lname %>
+</p>
+
+<p>
+  <strong>Birthdate:</strong>
+  <%= @patient.p_birthdate %>
+</p>
+
+<p>
+  <strong>Phonenumber:</strong>
+  <%= @patient.p_phonenume %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @patient.p_address_string %>
+</p>
+
+<p>
+  <strong>Complain:</strong>
+  <%= @patient.p_complain %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @patient.p_age %>
+</p>
+<p>
+  <strong>Patient id:</strong>
+  <%= @patient.id %>
+</p>
+<%= link_to 'Edit', edit_patient_path(@patient) %> 

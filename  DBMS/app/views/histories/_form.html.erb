@@ -1,0 +1,42 @@
+<%= form_for(history) do |f| %>
+  <% if history.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(history.errors.count, "error") %> prohibited this history from being saved:</h2>
+
+      <ul>
+      <% history.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :patient_id_ %>
+    <%= f.text_field :patient_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_disease %>
+    <%= f.text_field :current_disease %>
+  </div>
+
+  <div class="field">
+    <%= f.label :family_history %>
+    <%= f.text_area :family_history %>
+  </div>
+
+  <div class="field">
+    <%= f.label :diseases_history %>
+    <%= f.text_area :diseases_history %>
+  </div>
+
+  <div class="field">
+    <%= f.label :doctor_notes %>
+    <%= f.text_area :doctor_notes %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

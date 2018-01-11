@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Prescreptions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Patient</th>
+      <th>Diagnosis</th>
+      <th>Medications</th>
+      <th>Doctors comments</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @prescreptions.each do |prescreption| %>
+      <tr>
+        <td><%= prescreption.patient.p_fname %></td>
+        <td><%= prescreption.diagnosis %></td>
+        <td><%= prescreption.medications %></td>
+        <td><%= prescreption.doctors_comments %></td>
+        <td><%= link_to 'Show', prescreption %></td>
+        <td><%= link_to 'Edit', edit_prescreption_path(prescreption) %></td>
+        <td><%= link_to 'Destroy', prescreption, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Prescreption', new_prescreption_path %>

@@ -1,0 +1,67 @@
+<h1>Home page</h1>
+<html>
+<head>
+<style>
+body {
+    background-image: url("http://www.atlantic-clinic.es/wp-content/uploads/2015/06/banner-atlantic-clinic-nueva-andalucia-marbella.jpg");
+}
+</style>
+</head>
+<body>
+
+<% patient= 2002%>
+<% n= 1%>
+
+
+Profile|
+<%= link_to 'Show', patient_path(patient) %> <br/>
+<br/>
+
+Appointments: <br/>
+<% client = TinyTds::Client.new username: 'sa', password: '4176532', dataserver: 'HOSSAM\SQLEXPRESS', database:'FRtrial'  %>
+<% result = client.execute("SELECT id FROM [appointments] WHERE patient_id=#{patient}" ) %>
+<% result.each do |result| %>
+	<%= "appointment number #{n}|" %>
+	<%= link_to 'show', appointment_path(result["id"]) %> <br/>
+	<% n+=1 %>
+<%end %>
+<% n=1 %>
+
+New appointment|
+<%= link_to 'Book now', new_appointment_path %> 
+ <br/>
+ <br/>
+
+prescreptions:<br/>
+
+<% client = TinyTds::Client.new username: 'sa', password: '4176532', dataserver: 'HOSSAM\SQLEXPRESS', database:'FRtrial'  %>
+<% result = client.execute("SELECT id FROM [prescreptions] WHERE patient_id=#{patient}" ) %>
+<% result.each do |result| %>
+	<%= "prescreption number #{n}|" %>
+	<%= link_to 'show', prescreption_path(result["id"]) %> <br/>
+	<% n+=1 %>
+<%end %>
+<% n=1 %>
+<br/>
+
+medical history:
+<% client = TinyTds::Client.new username: 'sa', password: '4176532', dataserver: 'HOSSAM\SQLEXPRESS', database:'FRtrial'  %>
+<% result = client.execute("SELECT id FROM [histories] WHERE patient_id=#{patient}" ) %> 
+<% result.each do |result| %>
+	<%= link_to 'Show', history_path(result["id"]) %>
+<% end%><br/>
+<br/>
+fees: <br/>
+<% client = TinyTds::Client.new username: 'sa', password: '4176532', dataserver: 'HOSSAM\SQLEXPRESS', database:'FRtrial'  %>
+<% result = client.execute("SELECT id FROM [fees] WHERE patient_id=#{patient}" ) %> 
+<% result.each do |result| %>
+	<%= "Bill number #{n}|" %>
+	<%= link_to 'Show', fee_path(result["id"]) %><br/>
+	<% n+=1 %>
+<%end %>
+<% n=1 %><br/>
+
+
+<%= link_to("Logout",{:controller => 'home',:action => 'homepage'})%> <br/>
+
+

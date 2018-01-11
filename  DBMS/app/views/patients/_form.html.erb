@@ -1,0 +1,62 @@
+<%= form_for(patient) do |f| %>
+  <% if patient.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
+
+      <ul>
+      <% patient.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :p_ssn %>
+    <%= f.text_field :p_ssn %>
+  </div>
+
+  <div class="field">
+    <%= f.label :p_fname %>
+    <%= f.text_field :p_fname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :p_minit %>
+    <%= f.text_field :p_minit %>
+  </div>
+
+  <div class="field">
+    <%= f.label :p_lname %>
+    <%= f.text_field :p_lname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :p_birthdate %>
+    <%= f.date_select :p_birthdate %>
+  </div>
+
+  <div class="field">
+    <%= f.label :p_phonenume %>
+    <%= f.text_field :p_phonenume %>
+  </div>
+
+  <div class="field">
+    <%= f.label :p_address_string %>
+    <%= f.text_field :p_address_string %>
+  </div>
+
+  <div class="field">
+    <%= f.label :p_complain %>
+    <%= f.text_area :p_complain %>
+  </div>
+
+  <div class="field">
+    <%= f.label :p_age %>
+    <%= f.date_select :p_age %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

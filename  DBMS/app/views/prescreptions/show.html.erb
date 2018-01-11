@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Patient:</strong>
+  <%= @prescreption.patient.p_fname %>
+</p>
+
+<p>
+  <strong>Diagnosis:</strong>
+  <%= @prescreption.diagnosis %>
+</p>
+
+<p>
+  <strong>Medications:</strong>
+  <%= @prescreption.medications %>
+</p>
+
+<p>
+  <strong>Doctors comments:</strong>
+  <%= @prescreption.doctors_comments %>
+</p>
+
+<%= link_to 'Edit', edit_prescreption_path(@prescreption) %> 

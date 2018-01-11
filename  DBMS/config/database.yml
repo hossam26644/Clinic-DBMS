@@ -1,0 +1,10 @@
+development:
+  adapter: sqlserver
+  database: FRtrial
+  dsn: mydns
+  encoding: utf8
+  reconnect: false
+  username: sa
+  password: 4176532
+  timeout: 25
+  dataserver: HOSSAM\SQLEXPRESS

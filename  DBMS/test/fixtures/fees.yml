@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  patient: one
+  examination_fees: 1.5
+  medication_fees: 1.5
+  extra_fees: 1.5
+  discount: 1.5
+  total: 1.5
+
+two:
+  patient: two
+  examination_fees: 1.5
+  medication_fees: 1.5
+  extra_fees: 1.5
+  discount: 1.5
+  total: 1.5

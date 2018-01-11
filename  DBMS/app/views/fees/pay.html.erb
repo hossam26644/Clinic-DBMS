@@ -1,0 +1,22 @@
+
+<h1>Paying Fee</h1>
+
+<!--%= render 'form', fee: @fee %-->
+<% if (params.has_key?(:fee)) %>
+	<% y=@fee %>
+	<% y %>
+	<% client = TinyTds::Client.new username: 'sa', password: '4176532', dataserver: 'HOSSAM\SQLEXPRESS', database:'FRtrial'  %>
+	<% result = client.execute("SELECT examination_fees,medication_fees,extra_fees,discount FROM [fees] WHERE id=#{y}" ) %>
+
+	<% result.each do |row| %>
+	fees equal:
+	<%= row["examination_fees"] +row["medication_fees"] + row["extra_fees"] -row["discount"]%>
+	<%end%>
+</p>
+ <form action="get credit card values">
+    credit card number: <input type="text" name="credit card number"><br>
+    secret number:      <input type="text" name="secret number"><br>
+    <input type="submit" value="Submit">
+</form> 
+<%end%>
+
